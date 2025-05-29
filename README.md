@@ -1,11 +1,11 @@
 
 # Frontend - My Personal Portfolio
 
-🚀 **Modern, responsive, and high-performance personal portfolio** built with Vue 3, Vite, TypeScript, and Tailwind CSS. This frontend seamlessly integrates a secure contact form connected to a FastAPI backend, featuring reCAPTCHA v3 verification and rate limiting to prevent spam.
+**Modern, responsive, and high-performance personal portfolio** built with Vue 3, Vite, TypeScript, and Tailwind CSS. This frontend seamlessly integrates a secure contact form connected to a FastAPI backend, featuring reCAPTCHA v3 verification and rate limiting to prevent spam.
 
 ---
 
-## 🌟 Features
+## Features
 
 - Fully **responsive** and clean UI with reusable Vue 3 components  
 - **Contact form** with:  
@@ -19,7 +19,7 @@
 
 ---
 
-## 🛠 Technologies
+## Technologies
 
 - [Vue 3](https://vuejs.org/) — Frontend framework  
 - [Vite](https://vitejs.dev/) — Build tool and dev server  
@@ -30,7 +30,7 @@
 
 ---
 
-## ⚙️ Setup and Run Locally
+## Setup and Run Locally
 
 1. **Clone the repo:**
 
@@ -72,7 +72,7 @@ npm run preview
 
 ---
 
-## 🚀 Deployment
+## Deployment
 
 - This project is **deployed on Vercel** for blazing fast performance.  
 - Make sure to configure the following environment variables in your Vercel dashboard:  
@@ -82,7 +82,7 @@ npm run preview
 
 ---
 
-## 📝 Notes
+## Notes
 
 - The contact form sends the reCAPTCHA token in the request header (`recaptcha-token`) to the backend for verification.  
 - Rate limiting restricts form submissions to 3 per minute per IP to avoid spam.  
@@ -90,6 +90,6 @@ npm run preview
 
 ---
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License.
