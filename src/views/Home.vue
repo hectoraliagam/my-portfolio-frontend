@@ -44,7 +44,7 @@ onUnmounted(() => {
 
 <template>
   <Navbar />
-  <div class="bg-gradient-to-b to-black from-indigo-800">
+  <div class="ocean-bg min-h-screen w-full">
     <section id="home" ref="homeRef"><HeroSection /></section>
     <section id="about" ref="aboutRef"><AboutSection /></section>
     <section id="projects" ref="projectsRef"><ProjectsSection /></section>
@@ -53,5 +53,13 @@ onUnmounted(() => {
   <Footer />
 </template>
 
-<style>
+<style scoped>
+.ocean-bg {
+  background: 
+    radial-gradient(ellipse at center, rgba(30,64,175,0.6) 0%, transparent 70%),
+    linear-gradient(to bottom, #2f79d4 0%, #1248a0 40%, #071d66 60%, #000000 100%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: darken;
+}
 </style>

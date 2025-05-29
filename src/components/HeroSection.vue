@@ -25,11 +25,11 @@ function scrollTo(id: string) {
       
       <div class="flex flex-col">
         <span class="text-3xl sm:text-4xl font-light">Hi, I'm</span>
-        <h1 class="text-5xl sm:text-6xl md:text-7xl font-bold sm:pt-0 pt-4">HECTOR ALIAGA</h1>
+        <h1 class="text-5xl sm:text-6xl md:text-7xl font-bold md:pt-0 sm:pt-1 pt-1.5">HECTOR ALIAGA</h1>
       </div>
 
-      <p class="text-2xl sm:text-3xl font-medium flex items-center gap-2 mt-2 md:mt-6">
-        <span class="font-bold text-blue-400">FULLSTACK</span><span>developer 🚀</span>
+      <p class="text-xl sm:text-3xl font-medium flex items-center gap-2 mt-2 md:mt-6">
+        <span class="font-bold text-blue-300">FULLSTACK</span><span>developer 🚀</span>
       </p>
     </div>
 
@@ -40,9 +40,9 @@ function scrollTo(id: string) {
         Welcome to my personal portfolio. Here I showcase real-world web projects crafted with 
         <strong class="text-white">Vue 3</strong>, <strong class="text-white">TailwindCSS</strong>, 
         <strong class="text-white">FastAPI</strong>, and <strong class="text-white">PostgreSQL</strong>, 
-        with a focus on <span class="text-blue-200 font-semibold">clean design</span>, 
-        <span class="text-blue-200 font-semibold">functionality</span>, and 
-        <span class="text-blue-200 font-semibold">performance</span>.
+        with a focus on <span class="text-blue-100 font-semibold">clean design</span>, 
+        <span class="text-blue-100 font-semibold">functionality</span>, and 
+        <span class="text-blue-100 font-semibold">performance</span>.
       </p>
     </div>
 

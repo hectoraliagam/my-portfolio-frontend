@@ -7,19 +7,19 @@ function goHome() {
 </script>
 
 <template>
-  <footer class="bg-gradient-to-t from-black via-gray-900 to-gray-950 text-white pt-10 pb-6 px-16">
-    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+  <footer class="bg-gradient-to-t from-black via-gray-900 to-gray-950 text-white pt-10 pb-6 sm:px-16 px-8">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center sm:gap-8 gap-4">
       <!-- ABOUT -->
       <div class="space-y-2">
-        <h2 class="text-xl font-semibold tracking-wide">HECTOR ALIAGA</h2>
-        <p class="text-sm text-gray-400 max-w-sm">
+        <h2 class="sm:text-xl text-lg font-semibold tracking-wide">HECTOR ALIAGA</h2>
+        <p class="sm:text-sm text-xs text-gray-400 max-w-sm">
           Developer passionate about artificial intelligence, advanced web development, and innovative solutions.
         </p>
       </div>
 
       <!-- SOCIAL -->
       <div class="w-full md:w-auto flex flex-col items-end text-right space-y-2">
-        <h3 class="text-lg font-semibold text-white tracking-wide">SOCIAL</h3>
+        <h3 class="sm:text-lg text-base font-semibold text-white tracking-wide">SOCIAL</h3>
         <div class="flex gap-4 text-xl">
           <a href="https://github.com/hectoraliagam" target="_blank" aria-label="GitHub" class="hover:text-blue-400">
             <font-awesome-icon :icon="['fab', 'github']" />

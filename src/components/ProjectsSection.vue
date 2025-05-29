@@ -5,7 +5,7 @@ import CountrindexPreview from '@/assets/projects/countrindex-preview.png'
 <template>
   <section id="projects"
     class="min-h-screen flex flex-col items-center text-white gap-4 w-11/12 max-w-6xl mx-auto px-4">
-    <h1 class="text-5xl mt-24 mb-16 font-bold">
+    <h1 class="md:text-5xl mt-24 mb-16 font-bold text-4xl">
       MY PROJECTS
     </h1>
     <div class="grid md:grid-cols-2 gap-8 w-full mb-24">

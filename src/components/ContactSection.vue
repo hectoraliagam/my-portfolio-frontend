@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 import axios from 'axios'
 import Modal from './Modal.vue'
+import { useReCaptcha, type IReCaptchaComposition } from 'vue-recaptcha-v3'
 
 const name = ref('')
 const email = ref('')
@@ -10,24 +11,66 @@ const message = ref('')
 const isLoading = ref(false)
 const showModal = ref(false)
 const modalMessage = ref('')
+const modalType = ref<'success' | 'error'>('success')
 
-const backendUrl = import.meta.env.VITE_API_URL
+const backendUrl = import.meta.env.VITE_BACKEND_URL
+const { executeRecaptcha } = useReCaptcha() as IReCaptchaComposition
 
 const sendForm = async () => {
+  if (isLoading.value) return
+
+  if (!name.value || !email.value || !message.value) {
+    modalType.value = 'error'
+    modalMessage.value = 'Please complete all fields.'
+    showModal.value = true
+    return
+  }
+
   isLoading.value = true
   try {
-    const res = await axios.post(`${backendUrl}/contact`, {
-      name: name.value,
-      email: email.value,
-      message: message.value
-    })
+    let recaptchaToken = await executeRecaptcha('contact_form')
+    if (!recaptchaToken) {
+      recaptchaToken = await executeRecaptcha('contact_form')
+    }
+    if (!recaptchaToken) {
+      throw new Error('Failed to obtain reCAPTCHA token.')
+    }
+
+    const res = await axios.post(
+      `${backendUrl}/contact`,
+      {
+        name: name.value,
+        email: email.value,
+        message: message.value
+      },
+      {
+        headers: {
+          'recaptcha-token': recaptchaToken
+        }
+      }
+    )
+
+    modalType.value = 'success'
     modalMessage.value = res.data.message || 'Message sent successfully!'
     showModal.value = true
+
     name.value = ''
     email.value = ''
     message.value = ''
-  } catch (err) {
-    modalMessage.value = 'Error sending message. Please try again later.'
+  } catch (err: any) {
+    console.error('Error sending form:', err)
+
+    if (err.response?.status === 429) {
+      modalMessage.value = 'Too many attempts. Please wait a moment before trying again.'
+    } else if (err.response?.data?.detail === 'reCAPTCHA verification failed.') {
+      modalMessage.value = 'reCAPTCHA verification failed. Please try again.'
+    } else if (err.message?.includes('reCAPTCHA')) {
+      modalMessage.value = 'There was a problem verifying reCAPTCHA. Please try again.'
+    } else {
+      modalMessage.value = err.response?.data?.detail || err.message || 'Error sending message.'
+    }
+
+    modalType.value = 'error'
     showModal.value = true
   } finally {
     isLoading.value = false
@@ -86,7 +129,7 @@ const sendForm = async () => {
       </form>
     </div>
     <!-- MODAL -->
-    <Modal :show="showModal" :message="modalMessage" @close="showModal = false" />
+    <Modal :show="showModal" :message="modalMessage" :type="modalType" @close="showModal = false" />
   </section>
 </template>
 
