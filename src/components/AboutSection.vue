@@ -16,6 +16,7 @@ const skills = [
   {
     title: 'Backend',
     items: [
+      { name: 'Python', level: '80%' },
       { name: 'Node.js', level: '70%' },
       { name: 'Express', level: '60%' },
       { name: 'FastAPI', level: '75%' },
@@ -24,7 +25,7 @@ const skills = [
     ],
   },
   {
-    title: 'Others',
+    title: 'Otras',
     items: [
       { name: 'Git', level: '80%' },
       { name: 'GitHub', level: '80%' },
@@ -47,12 +48,12 @@ function scrollTo(id: string) {
 
 <template>
   <section id="about" class="min-h-screen w-full px-4 py-16 flex flex-col items-center text-white">
-    <h1 class="text-4xl md:text-5xl font-bold mb-12 text-center mt-8">ABOUT ME</h1>
+    <h1 class="text-4xl md:text-5xl font-bold mb-12 text-center mt-8">SOBRE MÍ</h1>
     <div
       class="w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-12 bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 sm:p-10 shadow-xl">
       <!-- SKILLS -->
       <div>
-        <h2 class="text-3xl font-bold mb-6">SKILLS</h2>
+        <h2 class="text-3xl font-bold mb-6">HERRAMIENTAS</h2>
         <template v-for="(category, index) in skills" :key="index">
           <h3 class="my-3 text-xl font-semibold text-blue-300">{{ category.title }}</h3>
           <ul class="flex flex-wrap gap-3 mb-6">
@@ -66,21 +67,17 @@ function scrollTo(id: string) {
           </ul>
         </template>
       </div>
-
+      
       <!-- WHO AM I -->
       <div>
-        <h2 class="text-3xl font-bold mb-6">WHO AM I?</h2>
+        <h2 class="text-3xl font-bold mb-6">¿QUIÉN SOY?</h2>
         <p class="text-lg sm:text-xl leading-relaxed text-white/90 mb-8 text-pretty">
-          I'm a self-taught developer from Lima, Peru, passionate about science and technology. Nearly two years ago, I
-          began my journey into web development, and since then, I haven't stopped learning or building real-world
-          projects. I completed two semesters at university, but due to family circumstances, I chose to pause my
-          studies and focus on pursuing my goals independently. Today, I'm fully committed to continuous learning and
-          turning my ambitions into reality.
+          Soy un programador autodidacta, apasionado por la ciencia y la tecnología. Hace casi dos años, comencé en el desarrollo web y, desde entonces, no he dejado de aprender ni de crear proyectos. Hoy en día, estoy totalmente comprometido con el aprendizaje continuo, enfocarme en perseguir mis metas y convertir mis ambiciones en realidad.
         </p>
 
         <button @click="scrollTo('contact')"
           class="px-6 py-3 rounded-full bg-blue-600 hover:bg-blue-500 transition text-white font-semibold shadow-md hover:scale-105 active:scale-95">
-          CONTACT
+          CONTACTO
         </button>
       </div>
     </div>

@@ -13,13 +13,13 @@ function goHome() {
       <div class="space-y-2">
         <h2 class="sm:text-xl text-lg font-semibold tracking-wide">HECTOR ALIAGA</h2>
         <p class="sm:text-sm text-xs text-gray-400 max-w-sm">
-          Developer passionate about artificial intelligence, advanced web development, and innovative solutions.
+          Desarrollador apasionado por el desarrollo web, la automatización, y las soluciones innovadoras.
         </p>
       </div>
-
+      
       <!-- SOCIAL -->
       <div class="w-full md:w-auto flex flex-col items-end text-right space-y-2">
-        <h3 class="sm:text-lg text-base font-semibold text-white tracking-wide">SOCIAL</h3>
+        <h3 class="sm:text-lg text-base font-semibold text-white tracking-wide">REDES SOCIALES</h3>
         <div class="flex gap-4 text-xl">
           <a href="https://github.com/hectoraliagam" target="_blank" aria-label="GitHub" class="hover:text-blue-400">
             <font-awesome-icon :icon="['fab', 'github']" />
@@ -45,7 +45,7 @@ function goHome() {
 
     <!-- COPYRIGHT -->
     <div class="mt-8 text-center text-xs text-gray-500">
-      © {{ currentYear }}. Made by
+      © {{ currentYear }}. Hecho por
       <button @click="goHome" class="hover:text-indigo-400 font-semibold transition underline underline-offset-2">
         Hector Aliaga
       </button>

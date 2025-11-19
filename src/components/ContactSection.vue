@@ -18,10 +18,10 @@ const { executeRecaptcha } = useReCaptcha() as IReCaptchaComposition
 
 const sendForm = async () => {
   if (isLoading.value) return
-
+  
   if (!name.value || !email.value || !message.value) {
     modalType.value = 'error'
-    modalMessage.value = 'Please complete all fields.'
+    modalMessage.value = 'Por favor, complete todos los campos.'
     showModal.value = true
     return
   }
@@ -51,7 +51,7 @@ const sendForm = async () => {
     )
 
     modalType.value = 'success'
-    modalMessage.value = res.data.message || 'Message sent successfully!'
+    modalMessage.value = res.data.message || '¡Mensaje enviado con éxito!'
     showModal.value = true
 
     name.value = ''
@@ -61,11 +61,11 @@ const sendForm = async () => {
     console.error('Error sending form:', err)
 
     if (err.response?.status === 429) {
-      modalMessage.value = 'Too many attempts. Please wait a moment before trying again.'
+      modalMessage.value = 'Demasiados intentos. Espere un momento antes de volver a intentarlo.'
     } else if (err.response?.data?.detail === 'reCAPTCHA verification failed.') {
-      modalMessage.value = 'reCAPTCHA verification failed. Please try again.'
+      modalMessage.value = 'La verificación reCAPTCHA ha fallado. Inténtalo de nuevo.'
     } else if (err.message?.includes('reCAPTCHA')) {
-      modalMessage.value = 'There was a problem verifying reCAPTCHA. Please try again.'
+      modalMessage.value = 'Hubo un problema al verificar reCAPTCHA. Inténtalo de nuevo.'
     } else {
       modalMessage.value = err.response?.data?.detail || err.message || 'Error sending message.'
     }
@@ -80,37 +80,37 @@ const sendForm = async () => {
 
 <template>
   <section id="contact" class="min-h-screen w-full px-4 pt-16 pb-32 flex flex-col items-center text-white">
-    <h1 class="text-4xl md:text-5xl font-bold mb-12 text-center mt-8">CONTACT ME</h1>
+    <h1 class="text-4xl md:text-5xl font-bold mb-12 text-center mt-8">CONTÁCTAME</h1>
     <div class="w-full max-w-4xl bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 sm:p-10 shadow-xl">
       <form @submit.prevent="sendForm" class="flex flex-col gap-6">
         <!-- NAME -->
         <div class="flex flex-col">
           <label for="name" class="mb-1 text-sm sm:text-base font-semibold text-white">
-            Name
+            Nombre
           </label>
           <input v-model="name" id="name" type="text" required
             class="p-3 rounded-lg bg-white/10 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
-            placeholder="Enter your name" />
+            placeholder="Ingresa tu nombre..." />
         </div>
 
         <!-- EMAIL -->
         <div class="flex flex-col">
           <label for="email" class="mb-1 text-sm sm:text-base font-semibold text-white">
-            Email
+            Correo electrónico
           </label>
           <input v-model="email" id="email" type="email" required
             class="p-3 rounded-lg bg-white/10 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
-            placeholder="Enter your email" />
+            placeholder="Ingresa tu correo electrónico..." />
         </div>
 
         <!-- MESSAGE -->
         <div class="flex flex-col">
           <label for="message" class="mb-1 text-sm sm:text-base font-semibold text-white">
-            Message
+            Mensaje
           </label>
           <textarea v-model="message" id="message" rows="5" required
             class="p-3 rounded-lg bg-white/10 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-blue-500 transition resize-none"
-            placeholder="Enter your message"></textarea>
+            placeholder="Ingresa tu mensaje..."></textarea>
         </div>
 
         <!-- BUTTON -->
@@ -123,7 +123,7 @@ const sendForm = async () => {
                 <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
               </svg>
             </span>
-            <span v-else>Send Message</span>
+            <span v-else>¡Envíame tu mensaje!</span>
           </button>
         </div>
       </form>

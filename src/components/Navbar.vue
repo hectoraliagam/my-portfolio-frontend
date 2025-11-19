@@ -29,10 +29,10 @@ const toggleMenu = () => {
       <!-- LINKS -->
       <ul class="hidden md:flex lg:absolute md:static gap-4 lg:gap-6 text-sm md:text-base 
          lg:left-1/2 lg:transform lg:-translate-x-1/2 lg:top-1/2 lg:-translate-y-1/2">
-        <li><a href="/" class="hover:underline">HOME</a></li>
-        <li><a href="#about" class="hover:underline">ABOUT</a></li>
-        <li><a href="#projects" class="hover:underline">PROJECTS</a></li>
-        <li><a href="#contact" class="hover:underline">CONTACT</a></li>
+        <li><a href="/" class="hover:underline">INICIO</a></li>
+        <li><a href="#about" class="hover:underline">SOBRE MÍ</a></li>
+        <li><a href="#projects" class="hover:underline">MIS PROYECTOS</a></li>
+        <li><a href="#contact" class="hover:underline">CONTÁCTAME</a></li>
       </ul>
 
       <!-- SOCIAL MEDIA -->
@@ -63,12 +63,12 @@ const toggleMenu = () => {
     <transition name="fade">
       <div v-if="isMenuOpen" class="md:hidden bg-indigo-950 border-t border-indigo-800 px-6 pb-4 z-40 relative">
         <ul class="flex flex-col gap-4 pt-4 text-base">
-          <li><a href="/" class="hover:underline" @click="toggleMenu">HOME</a></li>
-          <li><a href="#about" class="hover:underline" @click="toggleMenu">ABOUT</a></li>
-          <li><a href="#projects" class="hover:underline" @click="toggleMenu">PROJECTS</a></li>
-          <li><a href="#contact" class="hover:underline" @click="toggleMenu">CONTACT</a></li>
+          <li><a href="/" class="hover:underline" @click="toggleMenu">INICIO</a></li>
+          <li><a href="#about" class="hover:underline" @click="toggleMenu">SOBRE MÍ</a></li>
+          <li><a href="#projects" class="hover:underline" @click="toggleMenu">MIS PROYECTOS</a></li>
+          <li><a href="#contact" class="hover:underline" @click="toggleMenu">CONTÁCTAME</a></li>
         </ul>
-
+        
         <div class="mt-4 flex gap-4 text-2xl">
           <a href="https://github.com/hectoraliagam" target="_blank" aria-label="GitHub" class="hover:text-blue-400">
             <font-awesome-icon :icon="['fab', 'github']" />

@@ -50,11 +50,11 @@ const icon = computed(() => {
           />
         </svg>
       </div>
-
+      
       <!-- MESSAGE -->
       <p class="text-xl font-semibold mb-2">{{ props.message }}</p>
       <p class="text-sm text-gray-500 mb-6">
-        You can close this message when you're ready.
+        Puede cerrar este mensaje cuando esté listo.
       </p>
 
       <!-- BUTTON -->
@@ -62,7 +62,7 @@ const icon = computed(() => {
         @click="emit('close')"
         class="px-6 py-2 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-full transition shadow-md hover:shadow-lg active:scale-95"
       >
-        Got it
+        Entendido.
       </button>
     </div>
   </div>

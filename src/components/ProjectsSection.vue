@@ -8,7 +8,7 @@ import MiniReportesCRMPreview from '@/assets/projects/mini-reportes-crm-preview.
   <section id="projects"
     class="min-h-screen flex flex-col items-center text-white gap-4 w-11/12 max-w-6xl mx-auto px-4">
     <h1 class="md:text-5xl mt-24 mb-16 font-bold text-4xl">
-      MY PROJECTS
+      MIS PROYECTOS
     </h1>
     <div class="grid md:grid-cols-2 gap-8 w-full mb-24">
       <!-- Card #1 -->
@@ -27,7 +27,7 @@ import MiniReportesCRMPreview from '@/assets/projects/mini-reportes-crm-preview.
             <span class="minicard">Vite</span>
           </div>
           <a href="https://mini-crm-contactos.vercel.app/" target="_blank" class="link-demo">
-            Live Demo
+            Ver Demo
           </a>
         </div>
       </div>
@@ -46,7 +46,7 @@ import MiniReportesCRMPreview from '@/assets/projects/mini-reportes-crm-preview.
             <span class="minicard">Vite</span>
           </div>
           <a href="https://dashboard-reportes.vercel.app/" target="_blank" class="link-demo">
-            Live Demo
+            Ver Demo
           </a>
         </div>
       </div>
@@ -55,7 +55,7 @@ import MiniReportesCRMPreview from '@/assets/projects/mini-reportes-crm-preview.
         <img :src="CountrindexPreview" alt="Countrindex Preview" class="card-img" />
         <div class="card-content">
           <h2 class="title">Countrindex</h2>
-          <p class="subtitle">A responsive country explorer using Vue, Tailwind, and REST API.</p>
+          <p class="subtitle">Un explorador de países adaptable que utiliza Vue, Tailwind, and REST API.</p>
           <div class="minicards">
             <span class="minicard">Vue 3</span>
             <span class="minicard">Tailwind</span>
@@ -64,7 +64,7 @@ import MiniReportesCRMPreview from '@/assets/projects/mini-reportes-crm-preview.
             <span class="minicard">Vite</span>
           </div>
           <a href="https://countrindex.vercel.app/" target="_blank" class="link-demo">
-            Live Demo
+            Ver Demo
           </a>
         </div>
       </div>
